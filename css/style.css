@@ -1,0 +1,134 @@
+:root{
+   --main_color:#009ad8;
+    --bg-color: #1e202b;
+    
+}
+body{
+    font-family: "Roboto", "Open Sans", sans-seri;
+    background-color: var(--bg-color);
+}
+/* navvvvvvvvv */
+nav{
+    background-color: var(--bg-color);
+    font-size: 14px;
+}
+.navsmall{
+    height: 18vh;
+}
+.navlg{
+    height: 25vh; 
+}
+.navbar-brand{
+    color: white;
+}
+.navbar-brand:hover{
+    color: white;
+}
+.navbar-nav .nav-link.active, .nav-link:hover {
+    color: var(--main_color);
+    border: 2px solid var(--main_color); 
+}
+.nav-link {
+    color: white;
+    transition:all  0.5s;
+    border: 2px solid transparent; 
+}
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+.navbar-toggler{
+    color: white;
+}
+.navbar-toggler:hover .iconm{
+    color: var(--main_color);
+    border-color: var(--main_color);
+}
+.iconm{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+/* sectionnnnn  */
+.back-img {
+    background: url('../imgs/banner.png') top center no-repeat, var(--bg-color); 
+    background-size: 100% 50%;
+    background-position: top center, bottom center;
+}
+
+/* searchhhhhhh */
+.search{
+   padding-top: 0;
+}
+
+.form-control,.form-control:focus{
+    border-color: var(--bg-color);
+    background-color: var(--bg-color);
+    box-shadow:none;
+    color: white;
+
+}
+.form-control::placeholder{
+    color: rgba(152, 150, 150, 0.968);
+}
+.btncolor{
+    background-color: var(--main_color);
+    color: white;
+
+}
+.btn{
+    right: 80px;
+    background-color: var(--main_color);
+    bottom: 5px;
+    right: 5px;
+    padding: 10px 35px
+}
+.btn:hover{
+    background-color: var(--main_color);
+
+}
+.day{
+    background-color: #2d303d;
+    border-top-left-radius: 6px;
+}
+.div1{
+    background-color: #323544;
+    height: 100%;
+}
+.temp h2{
+    font-size: 100px;
+}
+.minip{
+    color: var(--main_color);
+}
+.fa-cloud{
+    font-size: 50px;
+}
+.temp img{
+    width: 7%;
+}
+.div2{
+    background-color: #262936;
+    height: 100%;
+}
+.day2{
+    background-color: #222530;
+}
+.sec2{
+    background-color: #262936;
+}
+
+.lastul li i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    transition: 0.3s;
+}
+
+.lastul li:hover i{
+    background-color: var(--main_color);
+    color: white;
+}

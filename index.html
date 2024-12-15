@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="shortcut icon" href="imgs/logo@2x.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Funnel+Display:wght@300..800&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+</head>
+<body>
+    <nav class="navsmall navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="imgs/logo@2x.png" alt="Logo"  class="d-inline-block align-text-top w-25">
+            Weather
+          </a>
+          <button class="navbar-toggler" id="menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars p-3 iconm"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+              <li class="">
+                <a class="nav-link active nav-item me-3 px-4 py-1 rounded-5" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="">
+                <a class="nav-link nav-item me-3 px-4 py-1 rounded-5" aria-current="page" href="#">News</a>
+              </li>
+              <li class="">
+                <a class="nav-link nav-item me-3 px-4 py-1  rounded-5" aria-current="page" href="#">Live Cameras</a>
+              </li>
+              <li class="">
+                <a class="nav-link nav-item me-3 px-4 py-1 rounded-5" aria-current="page" href="#">Photos</a>
+              </li>
+              <li class="">
+                <a class="nav-link nav-item me-3 px-4 py-1 rounded-5" aria-current="page" href="#">Contacts</a>
+              </li>
+            </ul>  
+          </div>
+        </div>
+    </nav>
+
+    <section class="back-img">
+        <div class="container" >
+            <div class=" mb-5 search position-relative">
+                <input id="cityName" type="text" class="form-control py-3 rounded-5" placeholder="Find Your Location">
+                <button id="submit" class="btn rounded-5 text-white position-absolute" type="button" >Find</button>
+              </div>
+              <div class="mt-5 row g-0">
+                <div class="col-md-4">
+                    <div class="div1 rounded-start-3">
+                        <div class="day text-secondary d-flex justify-content-between px-2 my-2">
+                            <p class="my-2" id="today"></p>
+                            <p class="my-2" id="todaysDate"></p>
+                        </div>
+                        <div class="temp mt-0 px-3">
+                            <p class="pt-4 pb-2 text-secondary fw-semibold fs-5" id="city"></p>
+                            <h2 class="fw-bold text-white" id="temp"></h2>
+                            <img id="icon1" class="w-25" alt="Weather Icon">
+                            <p class="pt-1 pb-3 minip" id="status" ></p>
+                            <div class="text-secondary pb-4 px-1">
+                                <img src="imgs/icon-umberella@2x.png" alt=""> 20%
+                                <img src="imgs/icon-wind@2x.png" alt=""> 18km/h
+                                <img src="imgs/icon-compass@2x.png" alt=""> East
+                            </div>
+    
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 text-white">
+                    <div class="div2 text-center">
+                        <div class="day2">
+                            <p id="tommorow" class="my-2 py-2 text-secondary"></p>
+                        </div>
+                        <div>
+                            <img id="icon2" height="50px" width="50px" class="mt-5 mb-2"  alt="Weather Icon">
+                            <h3 id="tempL1" class="mb-0"></h3>
+                            <h5 id="tempL2" class="text-secondary "></h5>
+                            <p id="desc" class="minip pt-2"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-white">
+                    <div class="div1 text-center">
+                        <div class="day">
+                            <p id="aftertommorow" class="my-2 py-2 text-secondary"></p>
+                        </div>
+                        <div>
+                            <img id="icon3" height="50px" width="50px" class="mt-5 mb-2" alt="Weather Icon">
+                            <h3 id="tempR1" class="mb-0"></h3>
+                            <h5 id="tempR2" class="text-secondary "></h5>
+                            <p id="desc2" class="minip pt-2"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <section class="sec2 mt-5">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class=" my-5 search position-relative">
+                        <input type="text" class="form-control py-3 rounded-5" placeholder="Enter your email to subscribe..">
+                        <button class="btn rounded-5 text-white position-absolute" type="button" >send</button>
+                    </div>
+
+                </div>
+                <div class="col-md-3  lastul">
+                    <div class="my-5">
+                        <ul class="list-unstyled d-flex gap-3 justify-content-center search">
+                            <li>
+                                <a class="text-decoration-none" href="facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="x.com"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="google.com"><i class="fa-brands fa-google"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-8 ms-2">
+                    <p class="text-secondary">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+      
+      
+
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.0/dist/sweetalert2.all.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
